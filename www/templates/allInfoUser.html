@@ -1,0 +1,54 @@
+<div ng-controller="infoUser">
+	<div class="ion-person icon-left button button-block button-energized">
+		Usuario Información
+	</div>
+	<div class="row">
+		<div class="col col-50">
+			<strong>Tipo documento:</strong> {{infoUser.typeId}}
+		</div>
+		<div class="col col-50">
+			<strong>Número:</strong> {{infoUser.identy}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<strong>Nombre:</strong> {{infoUser.nameUser}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<strong>Nombre Canal:</strong> {{infoUser.chanel}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-50">
+			<strong>Celular</strong><br>{{infoUser.cel}}
+		</div>
+		<div class="col-50">
+			<strong>Ciudad</strong><br>{{infoUser.city}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<strong>Dirección:</strong> {{infoUser.address}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<strong>Correo Electronico</strong><br> {{infoUser.mail}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<strong>Nueva Contraseña:</strong> {{infoUser.password}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-50 padding">
+			<a href="#/editUser{{infoUser.usId}}" class="icon-left ion-wrench button button-block button-assertive">Editar Datos</a>
+		</div>
+		<div class="col-50 padding">
+			<a href="#/allUsers" class="icon-left ion-reply button button-block button-dark">Volver</a>
+		</div>
+	</div>
+</div>

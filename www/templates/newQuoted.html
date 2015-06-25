@@ -1,0 +1,69 @@
+<ion-content ng-controller="cotiza2">
+	<div class="bar bar-energized" >
+		<div class="h1 title">Consultar Cotización</div>
+	</div>
+	<div class="content has-header">
+		<form class="newQuote2" name="newQuoted" novalidate="" ng-submit="newQuote(newQuoted)">
+			<div class="list">
+				<label class="item item-input">
+					<input type="text" name="placa" ng-model="coti.placa" placeholder="Placa" ng-maxlength="10" required>
+				</label>
+				<label class="item item-input">
+					<input type="text" name="motor" ng-model="coti.motor" placeholder="Motor" ng-minlength="2" required>
+				</label>
+				<label class="item item-input">
+					<input is-number type="text" class="moldeloCarro" name="modelo" ng-model="coti.modelo" placeholder="Modelo" required>
+				</label>
+				<label class="item item-input">
+					<input type="text" name="chasis" ng-model="coti.chasis" placeholder="Chasis" ng-minlength="2" required>
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tipo vehiculo
+					</div>
+					<select ng-options="tv.id as tv.name for tv in tvs" name="tv" ng-model="coti.tv">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Marca vehiculo
+					</div>
+					<select ng-options="marca.id as marca.name for marca in marcas" name="marca" ng-model="coti.marca" class="ion-input-select">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Clase Vehiculo
+					</div>
+					<select ng-options="info.id as info.name for info in infos" name="tpVehicle" ng-model="coti.tpVehicle" ng-change="update()">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label ng-hide="olding" class="item item-input item-select">
+					<div class="input-label">
+						Edad
+					</div>
+					<select ng-options="old.id as old.opt for old in olds" name="old" ng-model="coti.old">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label ng-hide="subt" class="item item-input item-select">
+					<div class="input-label">
+						Sub Tipo
+					</div>
+					<select ng-options="stp.id as stp.name for stp in stps" name="subt" ng-model="coti.subt">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label class="item item-input">
+					<input type="text" name="line" ng-model="coti.line" placeholder="Linea" required>
+				</label>
+			</div>
+			<div class="padding">
+				<input type="submit" ng-disabled="newQuoted.$invalid" class="button button-block button-positive" value="Guardar">
+			</div>
+		</form>
+	</div>
+</ion-content>

@@ -1,0 +1,147 @@
+<ion-content ng-controller="udateQouted">
+	<div class="row editQuot animate-hide" ng-hide="edClient">
+		<div class="col">
+			<div class="item item-divider item-energized">
+				Editar Cotización
+			</div>
+			<form name="updQuot" ng-submit="updateQuot(true)">
+				<label class="item item-input">
+					<span class="input-label">Placa</span>
+					<input type="text" ng-model="quo.placa">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Motor</span>
+					<input type="text" ng-model="quo.motor">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Modelo</span>
+					<input type="text" ng-model="quo.modelo">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Chasis</span>
+					<input type="text" ng-model="quo.chasis">
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tipo Vehiculo
+					</div>
+					<select ng-options="tv.id as tv.name for tv in tvs" name="tv" ng-model="quo.tv">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Marca
+					</div>
+					<select ng-options="marca.id as marca.name for marca in marcas" name="tv" ng-model="quo.idMarca">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Clase Vehiculo
+					</div>
+					<select ng-options="info.id as info.name for info in infos" name="tpVehicle" ng-model="quo.tpVehicle" ng-change="updates()">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label ng-hide="!subt" class="item item-input">
+					<div class="input-label">
+						Sub Tipo: <strong>{{quo.subType}}</strong>
+					</div>
+				</label>
+				<label ng-hide="!subt" class="item item-input">
+					<div class="input-label">
+						Edad: <strong>{{quo.edad}}</strong>
+					</div>
+				</label>
+				<label ng-hide="subt" class="item item-input item-select">
+					<div class="input-label">
+						Sub Tipo
+					</div>
+					<select ng-options="stp.id as stp.name for stp in stps" name="subt" ng-model="quo.subt">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<label ng-hide="olding" class="item item-input item-select">
+					<div class="input-label">
+						Edad
+					</div>
+					<select ng-options="old.id as old.opt for old in olds" name="old" ng-model="quo.old">
+						<option value="">Escojer</option>
+					</select>
+				</label>
+				<div class="card">
+					<div class="item item-text-wrap">
+						Precio: <strong>{{quo.precio}}</strong>
+					</div>
+				</div>
+				<div class="padding item item-input">
+					<input type="submit" ng-disabled="updQuot.$invalid" class="button button-block button-positive" value="Actualizar">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row editUser" ng-hide="!edClient">
+		<div class="col">
+			<div class="item item-divider item-energized">
+				Editar Usuario
+			</div>
+			<form name="updClient" ng-submit="updateQuot(false)">
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tipo Documento
+					</div>
+					<select ng-model="quo.typeId">
+						<option value="CC" selected>Cedula</option>
+						<option value="TI">Targeta Identidad</option>
+					</select>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Numero Documento</span>
+					<input required type="text" ng-model="quo.idenCl">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Nombre y Aplellido</span>
+					<input required type="text" ng-model="quo.nameCl">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Telefono</span>
+					<input required type="text" ng-model="quo.celCl">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Dirección</span>
+					<input required type="text" ng-model="quo.address">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Ciudad</span>
+					<input required type="text" ng-model="quo.city">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Email</span>
+					<input required type="email" ng-model="quo.mail">
+				</label>
+				<div class="padding item item-input">
+					<input type="submit" ng-disabled="updClient.$invalid" class="button button-block button-positive" value="Actualizar">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row responsign-xs">
+		<div class="col col-33">
+			<a href="javascript:history.back(1)" class="button-block button button-assertive icon-left ion-home">
+				volver
+			</a>
+		</div>
+		<div class="col col-33">
+			<a  ng-click="edClient=true" class="button-block button button-dark icon-left ion-man">
+				Cliente
+			</a>
+		</div>
+		<div class="col col-33">
+			<a class="button-block button button-dark icon-left ion-clipboard" ng-click="edClient=false">
+				Cotiza..
+			</a>
+		</div>
+	</div>
+</ion-content>

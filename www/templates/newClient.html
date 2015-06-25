@@ -1,0 +1,41 @@
+<ion-content scroll-content ionic-scroll  has-header ng-controller="cotiza">
+  <div class="bar bar-header bar-energized">
+    <div class="h1 title">Crear Contización</div>
+  </div>
+  <div class="content has-header">
+    <form class="newQuote" name="signinForm" ng-submit="signIn()">
+      <div class="list">
+        <label class="item item-input">
+          Documento 
+          <div class="select-content">
+            <select name="tipoDocu" ng-model="user.tipoDocu" class="ion-input-select">
+              <option value="CC">Cedula</option>
+              <option value="TI">Targeta Identidad</option>
+            </select>
+          </div>
+        </label>
+        <label class="item item-input">
+          <input type="number" ng-model="user.NumDoc" required placeholder="Número del Documento" name="NumDoc">
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model="user.NomyApe" ng-minlength="5" required name="NomyApe" placeholder="Nombre y Apellido">
+        </label>
+        <label class="item item-input">
+          <input type="number" ng-model="user.Tel" required placeholder="Telefono" name="Tel" >
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model="user.Dir" placeholder="Dirección" name="Dir" required>
+        </label>
+        <label class="item item-input">
+          <input type="email" ng-model="user.Cor" placeholder="Email" name="Cor" required>
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model="user.Ciudad" placeholder="Ciudad" name="Ciudad" required>
+        </label>
+        <div class="padding item item-input">
+          <input type="submit" ng-disabled="signinForm.$invalid" class="button button-block button-positive" value="Guardar">
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

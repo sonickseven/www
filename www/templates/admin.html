@@ -1,0 +1,43 @@
+<ion-content ng-controller="adm">
+    <div class="bar bar-header bar-stable">
+        <div class="h1 title">Opciones
+         <a href="#/login" class="button button-icon icon ion-power">Salir</a href="#/admin">
+         </div>
+    </div>
+    <div class="list" scroller="true">
+        <div class="item item-divider">
+            Cotización
+        </div>
+        <a class="item item-thumbnail-left" href="#/coti1">
+            <img src="./img/coin-money-2.png">
+            <h2>Nueva Cotización</h2>
+            <p>Crear usuario</p>
+        </a>
+        <a class="item item-thumbnail-left" href="#/queryQuot">
+            <img src="./img/search.png">
+            <h2>Consultar</h2>
+            <p>Cotización</p>
+        </a>
+        <div ng-hide="panelAmd">            
+            <div class="item item-divider">
+                usuarios
+            </div>
+            <a class="item item-thumbnail-left" href="#/newUser">
+                <img src="./img/Add-Male-User.png">
+                <h2>Crear usuario</h2>
+            </a>
+            <a class="item item-thumbnail-left" href="#/allUsers">
+                <img src="./img/search.png">
+                <h2>Consultar</h2>
+                <p>Usuario</p>
+            </a>
+            <div class="item item-divider">
+                Configuración
+            </div>
+            <a class="item item-thumbnail-left" href="#/chPass">
+                <img src="./img/updatePass.png">
+                <h2>Cambiar Contraseña</h2>
+            </a>
+        </div>
+    </div>
+<ion-content>

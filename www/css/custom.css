@@ -1,0 +1,52 @@
+body {padding: 0 50px;font-family: sans-serif;}
+.inline-block{
+  text-align: center;
+}
+
+/*.row>div.col{border:1px solid #ddd;}*/
+img.headerimg{
+width: 45%;
+}
+label#searchQuo{background-color: #fff;}
+input.searchQuoted{
+  background-color: transparent;
+}
+
+.ion-input-select--large,
+.ion-input-select,
+select{-webkit-appearance:non;background-repeat: no-repea;background-color: rgba(0,0,0,0); border:thin solid #ddddd;font-weight:30;display:inlin;vertical-align:middl;color:#33;padding: auto ;overflow:hidde;box-sizing:border-box;}
+
+.ion-input-select--large {
+  width:420px;
+  font-size:1.6rem;
+  background-image: url(http://i.imgur.com/7rGM4IX.png);
+  text-indent:40px;
+  padding:1.2rem 0;
+}
+
+.ion-input-select {
+  width: 115%;
+  font-size:1rem;
+  background-image: url(http://i.imgur.com/nA9xx1X.png);
+  text-indent:20px;
+  padding:.5rem 0;
+  border:none;
+}
+
+option {
+  background: #F4F4F4;
+  color: #646464;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+:focus {
+  outline:none;
+}
+
+div.select-content{min-width: 208px;
+  overflow: hidden;
+  margin-left: 20px;
+  border: 1px solid #ddd;}

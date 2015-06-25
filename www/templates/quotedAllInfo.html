@@ -1,0 +1,54 @@
+<ion-content ng-controller="allInfoQuod">
+	<div class="bar bar-header bar-energized">
+		<h1 class="title">Información de la Cotización</h1>
+	</div>
+	<div class="bar bar-subheader">
+		<div class="item item-divider">Información Cliente</div>
+		<div class="row">
+			<div class="col col-100"><strong>Nombre</strong>: {{quot.nameCl}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-100"><strong>Identificaión</strong>: {{quot.idenCl}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-50"><strong>Celular</strong><br>
+			{{quot.celCl}}</div>
+			<div class="col col-50"><strong>Ciudad</strong><br>
+			{{quot.city}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-100"><strong>Dirección</strong>: {{quot.address}}</div>
+		</div>
+		<div class="item item-divider">Información Cotización</div>
+		<div class="row">
+			<div class="col col-50"><strong>Placa</strong>: {{quot.placa}}</div>
+			<div class="col col-50"><strong>Marca Vehiculo</strong>: {{quot.marca}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-50"><strong>Modelo</strong>: {{quot.modelo}}</div>
+			<div class="col col-50"><strong>Clase Vehiculo</strong>: {{quot.clVh}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-50"><strong>SubTipo Vehiculo</strong><br>{{quot.subType}}</div>
+			<div class="col col-50"><strong>Edad</strong>: {{quot.edad}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-50"><strong>Fosyga(50%)</strong>: {{quot.fosyga}}</div>
+			<div class="col col-50"><strong>Tasa RUNT</strong>: {{quot.runt}}</div>
+		</div>
+		<div class="card">
+			<div class="item item-text-wrap">
+				Valor Total: {{quot.precio}} pesos
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-50 padding">
+				<a href="#/editQuot{{quot.idCoti}}" class="icon-left ion-wrench button button-block button-assertive">Editar Datos</a>
+			</div>
+			<div class="col-50 padding">
+				<a href="#/queryQuot" class="icon-left ion-reply button button-block button-dark">Volver</a>
+			</div>
+		</div>
+	</div>
+	
+</ion-content>

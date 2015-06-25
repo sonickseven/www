@@ -1,0 +1,40 @@
+<div ng-controller="queryQouts">
+	<ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-minus-outline"
+			ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+		</div>
+		<label class="item-input-wrapper item-block" id="searchQuo">
+			<i class="icon ion-ios-search placeholder-icon"></i>
+			<input type="search" ng-keyup="searchQuod(searchQu)" placeholder="Identidicaión usuario" ng-model="searchQu" class="searchQuoted">
+		</label>
+		<div class="buttons">
+			<a href="#/admin" class="button button-icon icon ion-ios-home"></a href="#/admin">
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+			<ion-item ng-repeat="coti in cotis" 
+			item="item"
+			href="#/infoCoti{{coti.idCoti}}" class="item-remove-animate">
+				<div class="row">
+					<div class="col col-80">
+						<strong>Nombre</strong><br>{{coti.nameCl}} <br>
+						<strong>Marca</strong><br>{{coti.marca}}<br>
+					</div>
+					<div class="col col-20">
+					<strong>Valor</strong><br>{{coti.precio}}<br>
+					<strong>Placa</strong><br>{{coti.placa}}
+					<ion-reorder-button class="ion-eye" on-reorder="moveItem()"></ion-reorder-button>
+					</div>
+				</div>
+				
+				
+				<ion-delete-button class="ion-minus-circled" 
+				ng-click="onItemDelete(coti)">
+				</ion-delete-button>
+				<ion-reorder-button class="ion-eye" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</div>

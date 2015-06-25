@@ -1,0 +1,85 @@
+<ion-content ng-controller="newuser">
+	<div class="bar bar-header bar-energized">
+		<h1 class="title">Crear Nuevo usuario</h1>
+	</div>
+	<div class="bar bar-subheader">
+		<div class="list">
+			<form name="newUserForm" ng-submit="newUser()">
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tipo de documento
+					</div>
+					<select ng-model="user.td">
+						<option value="CC" selected>Cedula</option>
+						<option value="TI">Targeta de Identidad</option>
+					</select>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Número documento</span>
+					<input required type="text" is-number ng-model="user.identi" placeholder="Numero de documento">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Nombre y Apellido</span>
+					<input required type="text" ng-model="user.name" placeholder="Nombre y Apellido">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Nombre del canal</span>
+					<input required type="text" ng-model="user.canalName" placeholder="Nombre del canal">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Telefono</span>
+					<input required type="text" is-number ng-model="user.tel" placeholder="Telefono">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Dirección</span>
+					<input required type="text" ng-model="user.address" placeholder="Dirección">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Correo Electronico</span>
+					<input required type="email" ng-model="user.mail" placeholder="Correo Electronico">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Ciudad</span>
+					<input required type="text" ng-model="user.city" placeholder="Ciudad">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Contraseña</span>
+					<input required type="password" ng-model="user.password" placeholder="Contraseña">
+				</label>
+				<div class="item item-divider item-energized">
+					Asignación de perfil
+				</div>
+				<div class="row responsive-md">
+					<div class="col col-50">
+						<label class="item item-radio">
+							<input type="radio" name="roll" class="rollUser" value="1" checked="checked">
+							<div class="item-content">
+								Administrador
+							</div>
+							<i class="radio-icon ion-checkmark"></i>
+						</label>
+					</div>
+					<div class="col col-50">
+						<label class="item item-radio">
+							<input type="radio" name="roll" class="rollUser" value="2">
+							<div class="item-content">
+								Intermediario
+							</div>
+							<i class="radio-icon ion-checkmark"></i>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<a class="button button-block button-positive" href="#/admin">
+							Regresar
+						</a>
+					</div>
+					<div class="col col-50">
+						<input type="submit" ng-disabled="newUserForm.$invalid" class="button button-block button-positive" value="Guardar">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,37 @@
+<div ng-controller="allUsers">
+	<ion-header-bar class="bar-energized">
+		<div class="buttons">
+			<button class="button button-icon icon ion-ios-minus-outline"
+			ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+		</div>
+		<label class="item-input-wrapper item-block" id="searchQuo">
+			<i class="icon ion-ios-search placeholder-icon"></i>
+			<input type="search" ng-keyup="searchUser(searchQu)" placeholder="Nombre o Identificación" ng-model="searchQu" class="searchQuoted">
+		</label>
+		<div class="buttons">
+			<a href="#/admin" class="button button-icon icon ion-ios-home"
+			ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></a href="#/admin">
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="uss in faber" 
+			item="item"
+			href="#/infoUser{{uss.idUser}}" class="item-remove-animate">
+				<div class="row">
+					<div class="col ">
+						<strong>Nombre: </strong>{{uss.nameUser}} <br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<strong>Identificación:</strong><br>{{uss.identy}}<br>
+					</div>
+					<div class="col col-50">
+						<strong>Perfil:</strong><br>{{uss.perfil}}
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</div>

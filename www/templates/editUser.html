@@ -1,0 +1,83 @@
+<ion-content ng-controller="editUser">
+	<div class="item item-divider item-energized">
+		Editar Cotización
+	</div>
+	<div class="padding">
+		<form name="editUserForm" ng-submit="editUser()">
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Tipo de documento
+				</div>
+				<select ng-model="user.typeId">
+					<option value="CC" selected>Cedula</option>
+					<option value="TI">Targeta de Identidad</option>
+				</select>
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Número Identificación</span>
+				<input type="text" is-number ng-model="user.identy">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Nombre y Apellido</span>
+				<input type="text" ng-model="user.nameUser">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Nombre del canal</span>
+				<input type="text" ng-model="user.chanel">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Telefono</span>
+				<input type="text" is-number ng-model="user.cel">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Dirección</span>
+				<input type="text" ng-model="user.address">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Correco Electronico</span>
+				<input type="email" ng-model="user.mail">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Ciudad</span>
+				<input type="text" ng-model="user.city">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Contraseña</span>
+				<input type="password" ng-model="user.password">
+			</label>
+			<div class="item item-divider item-energized">
+					Asignación de perfil
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<label class="item item-radio">
+							<input type="radio" name="roll" class="editrolluser" value="1" checked="checked">
+							<div class="item-content">
+								Administrador
+							</div>
+							<i class="radio-icon ion-checkmark"></i>
+						</label>
+					</div>
+					<div class="col col-50">
+						<label class="item item-radio">
+							<input type="radio" name="roll" class="editrolluser" value="2">
+							<div class="item-content">
+								Intermediario
+							</div>
+							<i class="radio-icon ion-checkmark"></i>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-50">
+						<a class="button button-block button-dark icon-left ion-reply" href="javascript:history.back(1)">
+							Regresar
+						</a>
+					</div>
+					<div class="col col-50">
+						<input type="submit" ng-disabled="editUserForm.$invalid" class="button button-block button-positive" value="Actualizar">
+					</div>
+				</div>
+		</form>
+	</div>
+</ion-content>

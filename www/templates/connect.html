@@ -1,0 +1,17 @@
+<div ng-controller="connecter">
+	<form name="connect" ng-submit="connecting()">
+		<div class="button button-block button-energized">Conectar con servidor</div>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">Direccion Ip</span>
+				<input type="text" ng-model="con.ipdir" required>
+			</label>
+			<div class="padding">
+				<input ng-disabled="connect.$invalid" type="submit" value="Conectar" class="button button-block button-dark">
+			</div>
+			<div ng-hide="gifLoad" class="padding inline-block">
+				<img src="./img/spinner.gif" alt="">
+			</div>
+		</div>
+	</form>
+</div>

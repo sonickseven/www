@@ -1,0 +1,31 @@
+<div ng-controller="chPass">
+	<div class="ion-ios-gear icon-left button button-block button-dark">
+		Cambiar Contraseña
+	</div>
+	<div>
+		<form name="chPass" ng-submit="newPass()">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">Antigua Contraseña</span>
+					<input type="password" ng-model="pass.oldPass" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Nueva Contraseña</span>
+					<input type="password" ng-model="pass.newPass" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Confirmar Contraseña</span>
+					<input type="password" ng-model="pass.confPass" required>
+				</label>
+			</div>
+			<div class="row">
+				<div class="col col-50">
+					<a href="#/admin" class="button button-block icon-left ion-ios-home button-dark">Inicio</a href="#/admin">
+				</div>
+				<div class="col col-50">
+					<input type="submit" ng-disabled="chPass.$invalid" value="Guardar" class="button button-block button-dark">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
