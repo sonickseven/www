@@ -7,7 +7,7 @@
 // var chatHist=io.connect('http://'+moreInfo.url+':3000/HistChat'), notifi=io.connect('http://'+moreInfo.url+':3000/notific');
 
 var olds=[{opt:'0 a 9 años', id: 1}, {opt:'10 años o mas', id: 2}], moreInfo={};
-moreInfo.url='qdigitalwit.esy.es';
+moreInfo.url='192.168.0.11';
 angular.module('todo', ['ionic'])
 .factory('ajax',['$http', function($http){
 	//funcion que se llama para enviar o pedir datos a mysql
@@ -70,7 +70,7 @@ angular.module('todo', ['ionic'])
 	.state('resultCoti', {cache:false, url: '/resultCoti', templateUrl: './templates/resultQuote.html'})
 	.state('infoCoti', {cache:false, url: '/infoCoti:cotiId', templateUrl: './templates/quotedAllInfo.html'})
 	.state('newUser', {cache:false, url: '/newUser', templateUrl: './templates/newUser.html'})
-	.state('/', {cache:false, url: '/', templateUrl: './templates/connect.html'})
+	// .state('/', {cache:false, url: '/', templateUrl: './templates/connect.html'})
 	.state('allUsers', {cache:false, url: '/allUsers', templateUrl: './templates/allUsers.html'})
 	.state('infoUser', {cache:false, url: '/infoUser:userId', templateUrl: './templates/allInfoUser.html'})
 	.state('chPass', {cache:false, url: '/chPass', templateUrl: './templates/changePass.html'})
@@ -400,20 +400,22 @@ angular.module('todo', ['ionic'])
 	// 	});
 	// };
 })
-.controller('connecter', function($scope, $timeout, $ionicPopup, $state, ajax){
+.controller('connecter', function($scope, $timeout, $ionicPopup, $state, ajax, $ionicSideMenuDelegate){
 	$scope.gifLoad=true;
 	$scope.connecting=function(){
 		$scope.gifLoad=false;
 		moreInfo.url=$scope.con.ipdir;
 		ajax.call({}, 'http://'+moreInfo.url+'/appSoat/protected/process/mobile.php?connect=1','get')
 		.success(function(a){
+			$scope.gifLoad=true;
 			$scope.con={}
 			$ionicPopup.alert({
 				title: 'Exito',
 				template:'<strong>Se ha logrado la conexión</strong>'
 			})
 			.then(function(){
-				$state.go('/login');
+				$ionicSideMenuDelegate.toggleRight();
+				// $state.go('/login');
 			});
 		})
 		.error(function(a){
@@ -487,11 +489,13 @@ angular.module('todo', ['ionic'])
 			ajax.call(datos, 'http://'+moreInfo.url+'/appSoat/protected/process/mobile.php?fnt=login&class=procesos', 'post')
 			.success(function(data){
 				if(data.res===1){
+					$scope.login={};
 					moreInfo.user=data.user;
 					$ionicPopup.alert({
 						title: 'OK',
 						template: 'Te has logeado con exito'
 					}).then(function(res){
+
 						$state.go('/admin');
 					});
 				}else
